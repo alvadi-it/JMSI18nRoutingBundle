@@ -36,7 +36,7 @@ class JMSI18nRoutingBundle extends Bundle
         $container->addCompilerPass(new SetRouterPass());
     }
 
-    public function getContainerExtension()
+    public function getContainerExtension(): ?Symfony\Component\DependencyInjection\Extension\ExtensionInterface
     {
         return new JMSI18nRoutingExtension();
     }
