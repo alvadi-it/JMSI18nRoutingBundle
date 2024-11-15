@@ -20,7 +20,7 @@ namespace JMS\I18nRoutingBundle;
 
 use JMS\I18nRoutingBundle\DependencyInjection\JMSI18nRoutingExtension;
 use Symfony\Component\DependencyInjection\Compiler\ResolveDefinitionTemplatesPass;
-use Symfony\Component\DependencyInjection\Extension\ExtensionInterface
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use JMS\I18nRoutingBundle\DependencyInjection\Compiler\SetRouterPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
