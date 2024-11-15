@@ -38,7 +38,7 @@ class I18nRouter extends Router
     private $hostMap = array();
     private $i18nLoaderId;
     private $container;
-    protected ?string $defaultLocale = null;
+    protected ?string $defaultLocale;
     private $redirectToHost = true;
     private $localeResolver;
 
@@ -97,7 +97,7 @@ class I18nRouter extends Router
     /**
      * {@inheritdoc}
      */
-    public function generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH)
+    public function generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH): string
     {
         // determine the most suitable locale to use for route generation
         $currentLocale = $this->context->getParameter('_locale');
@@ -147,7 +147,7 @@ class I18nRouter extends Router
     /**
      * {@inheritdoc}
      */
-    public function match($url)
+    public function match($url): array
     {
         return $this->matchI18n(parent::match($url), $url);
     }
