@@ -50,7 +50,7 @@ class LocaleChoosingListener
 
     public function onKernelException(ExceptionEvent  $event)
     {
-        if (HttpKernelInterface::MASTER_REQUEST !== $event->getRequestType()) {
+        if ((defined('\Symfony\Component\HttpKernel\HttpKernelInterface::MAIN_REQUEST') ? HttpKernelInterface::MAIN_REQUEST : HttpKernelInterface::MASTER_REQUEST) !== $event->getRequestType()) {
             return;
         }
 
